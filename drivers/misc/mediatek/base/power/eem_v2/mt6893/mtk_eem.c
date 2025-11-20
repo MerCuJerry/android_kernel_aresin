@@ -251,7 +251,7 @@ static int eem_aee_log_cur_volt(struct eem_det *det)
 	/* fill data to aee_log_buf */
 	if ((str_len > 0) &&
 		((cur_oft + str_len) < PTP_MEM_SIZE) &&
-		det->ctrl_id >= 0 && det->ctrl_id < NR_EEM_DET) {
+		det->ctrl_id >= 0 && det->ctrl_id < (enum eem_ctrl_id)NR_EEM_DET) {
 		memcpy(aee_volt->aee_v_det[det->ctrl_id].dumpbuf +
 			cur_oft, aee_log_buf, str_len + 1);
 		cur_oft += str_len;
@@ -286,7 +286,7 @@ static int eem_aee_log_cur_volt(struct eem_det *det)
 		/* fill data to aee_log_buf */
 		if ((str_len > 0) &&
 			((cur_oft + str_len) < PTP_MEM_SIZE) &&
-			det->ctrl_id >= 0 && det->ctrl_id < NR_EEM_DET) {
+			det->ctrl_id >= 0 && det->ctrl_id < (enum eem_ctrl_id)NR_EEM_DET) {
 			memcpy(aee_volt->aee_v_det[det->ctrl_id].dumpbuf +
 			cur_oft, aee_log_buf, str_len + 1);
 			cur_oft += str_len;
