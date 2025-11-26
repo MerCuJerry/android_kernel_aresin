@@ -36,6 +36,9 @@
 #include <notify_queue.h>
 #include <teei_secure_api.h>
 
+#ifdef IMSG_TAG
+#undef IMSG_TAG
+#endif
 #define IMSG_TAG "[tz_driver]"
 #include <imsg_log.h>
 
