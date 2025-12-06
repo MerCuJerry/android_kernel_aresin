@@ -75,6 +75,9 @@ __copy_from_user(void *to, const void __user *from, unsigned long n)
 	return raw_copy_from_user(to, from, n);
 }
 
+long strncpy_from_user_nofault(char *dst, const void __user *unsafe_addr,
+		long count);
+
 /**
  * __copy_to_user_inatomic: - Copy a block of data into user space, with less checking.
  * @to:   Destination address, in user space.
